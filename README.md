@@ -6,23 +6,23 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.<br>
+Runs the app in the development mode.&lt;br&gt;
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
+The page will reload if you make edits.&lt;br&gt;
 You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
+Launches the test runner in the interactive watch mode.&lt;br&gt;
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
+Builds the app for production to the `build` folder.&lt;br&gt;
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
+The build is minified and the filenames include the hashes.&lt;br&gt;
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
@@ -80,7 +80,7 @@ import "name you want" from 'your path css , scss'
 
 ### Example
 import classes from './folder/example.scss'
-<a className={classes.classNameInExample.scss}>
+&lt;a className={classes.classNameInExample.scss}&gt;
 
 ## use svg
 import "name you want" from 'your path svg'
@@ -88,10 +88,10 @@ import "name you want" from 'your path svg'
 
 ### Example
 import Logo from './logo.svg'
-<Logo />
+&lt;Logo /&gt;
 use with class name
 import classes from './folder/example.scss'
-<Logo className={classes.classNameInExample.scss} />
+&lt;Logo className={classes.classNameInExample.scss} /&gt;
 
 ## use png
 import "name you want" from 'your path png'
@@ -99,4 +99,4 @@ import "name you want" from 'your path png'
 ### Example
 import image from './image.png'
 import classes from './folder/example.scss'
-<img src={image} className={classes.classNameInExample.scss} />
+&lt;img src={image} className={classes.classNameInExample.scss} /&gt;
