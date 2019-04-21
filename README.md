@@ -79,24 +79,24 @@ command npm run prod or yarn prod
 import "name you want" from 'your path css , scss'
 
 ### Example
-import classes from './folder/example.scss'
+import classes from './folder/example.scss'<br/>
 &lt;a className={classes.classNameInExample.scss}&gt;
 
 ## use svg
-import "name you want" from 'your path svg'
+import "name you want" from 'your path svg'<br/>
 *important first letter will be capitalized 
 
 ### Example
-import Logo from './logo.svg'
-&lt;Logo /&gt;
-use with class name
-import classes from './folder/example.scss'
+import Logo from './logo.svg'<br/>
+&lt;Logo /&gt;<br/>
+use with class name<br/>
+import classes from './folder/example.scss'<br/>
 &lt;Logo className={classes.classNameInExample.scss} /&gt;
 
 ## use png
 import "name you want" from 'your path png'
 
 ### Example
-import image from './image.png'
-import classes from './folder/example.scss'
+import image from './image.png'<br/>
+import classes from './folder/example.scss'<br/>
 &lt;img src={image} className={classes.classNameInExample.scss} /&gt;
