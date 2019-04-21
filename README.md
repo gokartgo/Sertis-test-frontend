@@ -66,3 +66,30 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+## use css , scss
+import "name you want" from 'your path css , scss'
+
+### Example
+import classes from './folder/example.scss'
+<a className={classes.classNameInExample.scss}>
+
+## use svg
+import "name you want" from 'your path svg'
+*important first letter will be capitalized 
+
+### Example
+import Logo from './logo.svg'
+<Logo />
+use with class name
+import classes from './folder/example.scss'
+<Logo className={classes.classNameInExample.scss} />
+
+## use png
+import "name you want" from 'your path png'
+
+### Example
+import image from './image.png'
+import classes from './folder/example.scss'
+<img src={image} className={classes.classNameInExample.scss} />
