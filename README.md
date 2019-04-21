@@ -68,6 +68,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 
+## Explain How to Run
+### develop
+command npm run dev or yarn dev
+### production
+command npm run prod or yarn prod
+
+
 ## use css , scss
 import "name you want" from 'your path css , scss'
 

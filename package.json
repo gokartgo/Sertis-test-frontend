@@ -16,11 +16,14 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "dev": "webpack-dev-server --mode development --open",
-    "eject": "react-scripts eject"
+    "prod": "npm run production && npm run start",
+    "eject": "react-scripts eject",
+    "production": "webpack --mode production",
+    "heroku-postbuild": "npm run production"
   },
   "eslintConfig": {
     "extends": "react-app"
