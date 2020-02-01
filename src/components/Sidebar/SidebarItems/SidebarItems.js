@@ -6,7 +6,7 @@ import Item from './Item/Item'
 const sidebarItems = (props) => {
     const item = []
     for(let i = 0;i<10;i++) {
-        item.push(<Item/>)
+        item.push(<Item hover={props.hover}/>)
     }
     return (
         <div className={classes.itemContainer}>

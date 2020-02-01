@@ -5,3 +5,12 @@
     padding: 30px 20px;
     font-weight: 700;
 }
+
+@media (max-width: 600px) {
+    .header {
+        visibility: hidden;
+        &.expandSidebar {
+            visibility: initial;
+        }
+    }
+}

@@ -3,10 +3,14 @@ import React from 'react'
 import classes from './Item.scss'
 
 const item = (props) => {
+    let sidebarStyle = classes.title
+    if(props.hover) {
+        sidebarStyle = [classes.title,classes.expandSidebar].join(' ')
+    }
     return (
         <li className={classes.itemContainer}>
             <div className={classes.icon}/>
-            <div className={classes.title}>
+            <div className={sidebarStyle}>
                 <p>a</p>
                 <p>b</p>
             </div>

@@ -3,4 +3,14 @@
     position: fixed;
     height: 100%;
     background-color: #2FB3DE;
+    transition: all 0.3s ease-out;
+}
+
+@media (max-width: 600px) {
+    .sidebarContainer {
+        width: 60px;
+        &.expandSidebar {
+            width: 200px;
+        }
+    }
 }

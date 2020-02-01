@@ -21,3 +21,14 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+    .itemContainer {
+        .title {
+            display:none;
+            &.expandSidebar {
+                display: flex;
+            }
+        }
+    }
+}
