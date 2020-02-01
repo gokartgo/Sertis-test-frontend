@@ -1,4 +1,6 @@
 import React,{Component} from 'react'
+import { connect } from 'react-redux'
+import * as actions from '../../store/actions/index'
 import classes from './AddCardContainer.scss'
 
 class CardContainer extends Component {
@@ -28,9 +30,9 @@ class CardContainer extends Component {
                     this.inputChange(e)
                 }}/>
                 <button onClick={() => {
+                    this.props.onAddCard({...this.state})
                     this.props.history.push({
                             pathname:'/',
-                            state: {newCard: this.state}
                         });
                     }
                 }>submit</button>
@@ -39,4 +41,10 @@ class CardContainer extends Component {
     }
 }
 
-export default CardContainer
+const mapDispatchToProps = dispatch => {
+    return {
+        onAddCard: (card) => dispatch(actions.addCard(card)),
+    };
+};
+
+export default connect(null, mapDispatchToProps)(CardContainer)

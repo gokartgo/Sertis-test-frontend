@@ -1,49 +1,48 @@
 import React,{Component} from 'react'
+import { connect } from 'react-redux'
+import * as actions from '../../store/actions'
 import classes from './CardContainer.scss'
+import Aux from '../../hoc/Auxiliary/Auxiliary'
 import Card from '../../components/Card/Card'
+import Modal from '../../components/Modal/Modal'
 
 class CardContainer extends Component {
+    
     state = {
-        cards: [
-            {
-                id:0,
-                header: 'header0',
-                status: 'status0',
-                content: 'content0',
-            },
-            {
-                id:1,
-                header: 'header1',
-                status: 'status1',
-                content: 'content1',
-            },
-            {
-                id:2,
-                header: 'header2',
-                status: 'status2',
-                content: 'content2',
-            }
-        ]
-    }
-
-    componentWillMount() {
-        console.log("test")
+        showModal: false,
+        card: {
+            header: '',
+            status: '',
+            content: '',
+        },
     }
 
     deleteCard = (id) => {
-        const {
-            cards
-        } = this.state
-        const newCards = cards.filter(card => {
-            return card.id !== id
+        this.props.onDeleteCard(id)
+    }
+
+    editCard = (card) => {
+        this.setState({showModal: true,
+            card: {...card} 
         })
-        this.setState({cards:newCards})
+    }
+
+    inputChange = (event) => {
+        this.setState({card: {
+                ...this.state.card,
+                [event.target.id]:event.target.value,
+            }
+        })
+    }
+
+    cancelEditCard = () => {
+        this.setState({showModal: false})
     }
 
     render() {
         const {
             cards
-        } = this.state
+        } = this.props
         const card = cards.map(card => {
             return (<Card
                 key={card.id}
@@ -53,15 +52,67 @@ class CardContainer extends Component {
                 delete={() => {
                     this.deleteCard(card.id)
                 }}
+                edit={() => {
+                    this.editCard(card)
+                }}
             />)
         }) 
-
+        console.log(this.state)
         return (
-            <div className={classes.CardContainer}>
-                {card}
-            </div>
+            <Aux>
+                <div className={classes.CardContainer}>
+                    {card}
+                </div>
+                <Modal show={this.state.showModal} modalClosed={this.cancelEditCard}>
+                    <div className={classes.modalContainer}>
+                        <label >Header</label>
+                        <input 
+                            type="text" id="header" 
+                            placeholder="Header.." 
+                            value={this.state.card.header} 
+                            onChange={(e) => {
+                            this.inputChange(e)
+                        }}/>
+                        <label >Status</label>
+                        <input 
+                            type="text" 
+                            id="status" 
+                            placeholder="Status.." 
+                            value={this.state.card.status} 
+                            onChange={(e) => {
+                            this.inputChange(e)
+                        }}/>
+                        <label >Content</label>
+                        <input 
+                            type="text" 
+                            id="content" 
+                            placeholder="Content.." 
+                            value={this.state.card.content} 
+                            onChange={(e) => {
+                            this.inputChange(e)
+                        }}/>
+                        <button onClick={() => {
+                            this.props.onEditCard(this.state.card)
+                            this.cancelEditCard()
+                        }}>submit</button>
+                    </div>
+                </Modal>
+            </Aux>
         )
     }
 }
 
-export default CardContainer
+const mapStateToProps = state => {
+    return {
+        cards: state.cards,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onEditCard: (card) => dispatch(actions.editCard(card)),
+        onDeleteCard: (id) => dispatch(actions.deleteCard(id)),
+    };
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(CardContainer)
