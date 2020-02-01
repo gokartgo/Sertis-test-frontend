@@ -1,0 +1,24 @@
+.cardContainer {
+    max-width: calc(50% - 20px);
+    flex: 50%;
+    display: table;
+    background-color: white;
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+    .cardHeader {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+    p {
+        margin: 0;
+    }
+}
+.cardContent {
+    word-break: break-word;
+    margin-bottom: 16px;
+    & > p {
+        font-size: 20px
+    }
+}

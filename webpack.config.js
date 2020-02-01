@@ -78,6 +78,7 @@ module.exports = {
     },
     devServer: {
         contentBase: "./build",
+        historyApiFallback: true,
     },
     plugins: [
         new CleanWebpackPlugin(['build']),

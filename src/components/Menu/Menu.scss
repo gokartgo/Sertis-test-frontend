@@ -9,8 +9,10 @@
         font-size: 36px;
         padding: 0 16px;
         color: #D4D4D4;
-        &.active {
-            color: #71CDEB;
-        }
+        text-decoration: none;
     }
+}
+
+.active {
+    color: #71CDEB !important;
 }

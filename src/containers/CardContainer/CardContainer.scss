@@ -1,7 +1,6 @@
 .CardContainer {
     background-color: #F6F6F6;
     min-height: calc(100vh - 83px);
-    div {
-        font-size: 100px
-    }
+    display: flex;
+    flex-wrap: wrap;
 }
