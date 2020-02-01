@@ -1,0 +1,16 @@
+.menuContainer {
+    width: 100%;
+    height: 83px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 16px;
+    a {
+        font-size: 36px;
+        padding: 0 16px;
+        color: #D4D4D4;
+        &.active {
+            color: #71CDEB;
+        }
+    }
+}
