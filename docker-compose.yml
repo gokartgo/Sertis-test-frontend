@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  node:
+    image: node:alpine
+    container_name: sertis-node
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - "3000:8080"
+    command: sh -c "yarn && yarn dev"
+
+networks:
+  microservicenetwork:
