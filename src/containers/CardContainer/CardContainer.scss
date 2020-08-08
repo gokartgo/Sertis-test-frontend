@@ -3,6 +3,7 @@
     min-height: calc(100vh - 83px);
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 .modalContainer {
